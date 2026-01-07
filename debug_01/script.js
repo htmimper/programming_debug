@@ -1,7 +1,11 @@
 //<script type="text/javascript">
 function toOneDimension( previousValue, currentValue) {
 //previousValueは今まで処理していた結果の値, currentValueは今処理している値
-    return previousValue.concat( currentValue);
+    console.log("previousValue:", previousValue);
+    console.log("currentValue:", currentValue);
+    console.log("結合結果:", previousValue.concat(currentValue));
+    console.log("----------");
+     return previousValue.concat( currentValue);
 }
 //concatは配列や文字列を「つなげる」ための命令のため、previousValueとcurrentValueを連結させる指示
 var sampleArrayA= [
@@ -38,7 +42,7 @@ var sampleArrayA= [
     [ 'B1', 'B2', 'B3' ],
     [ 'C1', 'C2', 'C3' ]
 ];
-var sampleArrayB= sampleArrayA
+var sampleArrayB= sampleArrayA  
   .reverse()        // 行の順序を逆転（C → B → A）
   .reduce(toOneDimension, []);　//
 for ( var counterVar= 0; counterVar< sampleArrayB.length; counterVar++ ) {
